@@ -1,13 +1,17 @@
 import React from "react";
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from "./productSlice";
 
 function ProductList(){
-    var products = useSelector(state=>state.productReducer)
-    console.log(products);
+    var {products} = useSelector(state=>state.productReducer)
+    var Dispatch = useDispatch()
     return (
         <div>
             <h1>Products</h1>
-          
+            { products?.map((product)=>{
+                return <li>{product.title}
+                <button onClick={()=>{Dispatch(addToCart(product))}}>Add To Cart</button></li>
+            })}
         </div>
     )
 }

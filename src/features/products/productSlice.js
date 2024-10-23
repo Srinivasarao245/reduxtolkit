@@ -3,12 +3,17 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     products,
+    CartItem:[]
 }
 export const productSlice = createSlice({
     name:'products',
     initialState,
-    reducers:{  }
+    reducers:{ 
+        addToCart:(state,action)=>{
+        state.CartItem.push(action.payload)
+    } },
 })
 // Action creators are generated for eact case reducer function 
-const producrReducer = productSlice.reducer
-export default producrReducer
+export const { addToCart } = productSlice.actions
+const productReducer = productSlice.reducer
+export default productReducer
