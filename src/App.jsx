@@ -4,7 +4,7 @@ import React from "react";
 
 function App() {
   return (
-    <div className="App bg-warning">
+    <>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,8 +19,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <h1>$riniva$</h1>
-    </div>
+      <h1 className='container'>$riniva$</h1>
+    </>
   );
 }
 
