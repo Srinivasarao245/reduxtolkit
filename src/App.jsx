@@ -1,10 +1,14 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React from "react";
+import ProductList from './features/productList';
+import { useSelector } from 'react-redux';
 
 function App() {
+  var {cartItems} = useSelector(state=>state.productReducer)
+  console.log(cartItems)
   return (
-    <div className="container">
+    <>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +24,9 @@ function App() {
         </a>
       </header> */}
       <h1>$riniva$</h1>
-    </div>
+      <h1>CartItemsCount:{cartItems?.length}</h1>
+      <ProductList></ProductList>
+    </>
   );
 }
 
