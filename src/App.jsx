@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from "react";
+import NewTodo from './todos/NewTodo';
 
 function App() {
   return (
-    <div className="App bg-warning">
+    <>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +21,8 @@ function App() {
         </a>
       </header> */}
       <h1>$riniva$</h1>
-    </div>
+      <NewTodo></NewTodo>
+    </>
   );
 }
 
